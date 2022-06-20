@@ -21,8 +21,18 @@
             <version>3.0.0</version>
             <scope>provided</scope>
         </dependency>
-
     </dependencies>
+
+    <build>
+        <finalName>jspishnaya</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.3.2</version>
+            </plugin>
+        </plugins>
+    </build>
 
     <properties>
         <maven.compiler.source>18</maven.compiler.source>
