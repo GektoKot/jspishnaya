@@ -1,2 +1,2 @@
 # jspishnaya
-Jsptraining
+Jsptraining for glory
