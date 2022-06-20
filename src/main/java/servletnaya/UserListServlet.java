@@ -21,6 +21,7 @@ public class UserListServlet extends HttpServlet {
             add(new User("Gnyava","Buba"));
             add(new User("Shmiga","Boba"));
             add(new User("Motya","Kotya"));
+            add(new User("Motya1","Kotya1"));
         }};
 
         req.setAttribute("users", users);
