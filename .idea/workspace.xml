@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d80a2718-52d2-48dc-956e-dceedda9fb76" name="Changes" comment="test commit another">
-      <change beforePath="$PROJECT_DIR$/src/main/java/servletnaya/UserListServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servletnaya/UserListServlet.java" afterDir="false" />
+    <list default="true" id="d80a2718-52d2-48dc-956e-dceedda9fb76" name="Changes" comment="add new user">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,7 +152,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655760730263</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="add new user">
+      <created>1655761131739</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1655761131739</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -184,6 +191,7 @@
     <MESSAGE value="build plugin" />
     <MESSAGE value="test commit" />
     <MESSAGE value="test commit another" />
-    <option name="LAST_COMMIT_MESSAGE" value="test commit another" />
+    <MESSAGE value="add new user" />
+    <option name="LAST_COMMIT_MESSAGE" value="add new user" />
   </component>
 </project>
