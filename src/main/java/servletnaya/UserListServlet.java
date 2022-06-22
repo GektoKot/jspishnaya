@@ -16,6 +16,12 @@ public class UserListServlet extends HttpServlet {
         ArrayList<User> users = new ArrayList<>() {{
             add(new User("Vasya","Pupkin"));
             add(new User("Petya","Petushok"));
+            add(new User("Petya","Petushok"));
+            add(new User("Petya","Petushok"));
+            add(new User("Petya","Petushok"));
+            add(new User("Tetya","Dyadya"));
+            add(new User("Tetya","Dyadya"));
+            add(new User("Tetya","Dyadya"));
             add(new User("Tetya","Dyadya"));
             add(new User("Dril","Biba"));
             add(new User("Gnyava","Buba"));

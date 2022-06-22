@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d80a2718-52d2-48dc-956e-dceedda9fb76" name="Changes" comment="More new users">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="d80a2718-52d2-48dc-956e-dceedda9fb76" name="Changes" comment="delete dublicates">
       <change beforePath="$PROJECT_DIR$/src/main/java/servletnaya/UserListServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servletnaya/UserListServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -181,7 +180,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655894674575</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="delete dublicates">
+      <created>1655895396265</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1655895396265</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -216,6 +222,7 @@
     <MESSAGE value="add new user" />
     <MESSAGE value="add new users" />
     <MESSAGE value="More new users" />
-    <option name="LAST_COMMIT_MESSAGE" value="More new users" />
+    <MESSAGE value="delete dublicates" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete dublicates" />
   </component>
 </project>
