@@ -17,17 +17,8 @@ public class UserListServlet extends HttpServlet {
             add(new User("Vasya","Pupkin"));
             add(new User("Petya","Petushok"));
             add(new User("Tetya","Dyadya"));
-            add(new User("Tetya","Dyadya"));
-            add(new User("Tetya","Dyadya"));
-            add(new User("Tetya","Dyadya"));
-            add(new User("Tetya","Dyadya"));
-            add(new User("Tetya","Dyadya"));
             add(new User("Dril","Biba"));
             add(new User("Gnyava","Buba"));
-            add(new User("Gnyava","Buba"));
-            add(new User("Gnyava","Buba"));
-            add(new User("Gnyava","Buba"));
-            add(new User("Shmiga","Boba"));
             add(new User("Motya","Kotya"));
             add(new User("chupa","chups"));
         }};
