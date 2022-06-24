@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.util.List"%>
-<%@ page import="servletnaya.User"%>
+<%@ page import="entity.User"%>
 
 
 <html>
@@ -15,7 +15,7 @@
     <% for (User user : users) {%>
         <tr>
            <td><%= user.getName() %></td>
-           <td><%= user.getSureName() %></td>
+           <td><%= user.getSurname() %></td>
         </tr>
     <% } %>
     </table>
