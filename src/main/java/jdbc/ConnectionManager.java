@@ -11,7 +11,6 @@ public final class ConnectionManager {
     public static final String USER = "db.username";
     public static final String PASSWORD = "db.password";
 
-
     private ConnectionManager (){
     }
 
