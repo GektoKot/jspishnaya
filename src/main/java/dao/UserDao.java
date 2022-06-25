@@ -10,7 +10,7 @@ import java.util.Optional;
 
 public class UserDao implements UserDaoIF{
     @Override
-    public Optional<User> find(String id) throws SQLException {
+    public Optional<User> findById(String id) throws SQLException {
         String sql = """
                 select * from users_table where user_id = ?;
                 """;
@@ -22,7 +22,7 @@ public class UserDao implements UserDaoIF{
 
         try (Connection connection = ConnectionManager.connect();
              PreparedStatement statement = connection.prepareStatement(sql)) {
-            statement.setString(1, id);
+            statement.setInt(1, Integer.parseInt(id));
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
                 user_id = resultSet.getInt("user_id");

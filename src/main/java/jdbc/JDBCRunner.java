@@ -1,5 +1,7 @@
 package jdbc;
 
+import dao.UserDao;
+import entity.User;
 import org.postgresql.Driver;
 
 import java.sql.*;
@@ -12,9 +14,10 @@ public class JDBCRunner {
         try (Connection connection = ConnectionManager.connect();
              Statement statement = connection.createStatement()) {
             String sql = """
-                    SELECT * FROM users_table;
+                    SELECT * FROM users_table where user_id = 1;
                     """;
             ResultSet resultSet = statement.executeQuery(sql);
+
 
             while (resultSet.next()) {
                 System.out.println(resultSet.getInt("user_id") + " "
@@ -23,6 +26,10 @@ public class JDBCRunner {
                         + resultSet.getInt("age"));
             }
 
+            User user = new UserDao().findById("1").orElseThrow();
+
+            System.out.println(user);
+
             System.out.println(connection.getSchema());
             System.out.println(connection.getMetaData());
             System.out.println(connection.getTransactionIsolation());
@@ -30,5 +37,4 @@ public class JDBCRunner {
             throw new RuntimeException(e);
         }
     }
-
 }
