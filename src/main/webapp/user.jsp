@@ -15,7 +15,7 @@
    <h1>User</h1>
 
    <% User user = (User) request.getAttribute("user");%>
-   <% Set<Pet> pets = (Set) user.getPet(); %>
+   <% List<Pet> pets = (List) user.getPet(); %>
    <% List<Hobby> hobbies = (List) user.getHobby(); %>
        <table>
            <thead>
@@ -33,11 +33,12 @@
                   <td><%= user.getName() %></td>
                   <td><%= user.getSurname() %></td>
                   <% for (Pet pet : pets) { %>
-                    <td><%= pet.getName() %></td>
+                    <td><br><%= pet.getName() %></td>
                   <% } %>
                   <% for (Hobby hobby : hobbies) { %>
-                    <td><%= hobby.getName() %></td>
+                    <td><br><%= hobby.getName() %></td>
                   <% } %>
+
                </tr>
 
        </table>
@@ -56,7 +57,7 @@
        <fieldset>
           <legend>add hobby</legend>
           <input type="hidden" name="user_id" value="<%= user.getId() %>"  type="text">
-          <label>hobby<input name="name" placeholder="hobby"  type="text"></label>
+          <label>hobby<input name="hobby" placeholder="hobby"  type="text"></label>
           <label><input type="submit" name="button" value="add_hobby"></label>
         </fieldset>
     </form>
@@ -65,7 +66,7 @@
             <fieldset>
                      <legend>add pet</legend>
                      <input type="hidden" name="user_id" value="<%= user.getId() %>"  type="text">
-                     <label>pet name<input name="pet_name" placeholder="pet name"  type="text"></label>
+                     <label>pet name<input name="pet" placeholder="pet name"  type="text"></label>
                      <label><input type="submit" name="button" value="add_pet"></label>
             </fieldset>
     </form>

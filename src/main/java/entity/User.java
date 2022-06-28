@@ -25,20 +25,22 @@ public class User { //implements Serializable
     private String name;
     @Column(name = "surname")
     private String surname;
+
     @OneToMany(
-            mappedBy = "user",
             fetch = FetchType.EAGER,
             cascade = CascadeType.ALL)
-    @Column(name = "pet")
-    private Set<Pet> pet;
+    @JoinTable(
+            name = "app_user_pet",
+            joinColumns = { @JoinColumn(name = "user_id") },
+            inverseJoinColumns = { @JoinColumn(name = "pet_id") })
+    private List<Pet> pet;
     @ManyToMany(
             fetch = FetchType.EAGER,
             cascade = CascadeType.ALL)
     @JoinTable(
             name = "app_user_hobby",
             joinColumns = { @JoinColumn(name = "user_id") },
-            inverseJoinColumns = { @JoinColumn(name = "hobby_id") }
-    )
+            inverseJoinColumns = { @JoinColumn(name = "hobby_id") })
     private List<Hobby> hobby;
 
     public User(int id) {
@@ -54,24 +56,11 @@ public class User { //implements Serializable
         this.surname = surname;
     }
 
-    public User(String name, String surname, Set<Pet> pets, ArrayList<Hobby> hobbies) {
+    public User(String name, String surname, List<Pet> pets, List<Hobby> hobbies) {
         this.name = name;
         this.surname = surname;
         this.pet = pets;
         this.hobby = hobbies;
     }
 
-    public User(int id, String name, String surname, Set<Pet> pets) {
-        this.id = id;
-        this.name = name;
-        this.surname = surname;
-        this.pet = pets;
-    }
-
-    public User(int id, String name, String surname, ArrayList<Hobby> hobby) {
-        this.id = id;
-        this.name = name;
-        this.surname = surname;
-        this.hobby = hobby;
-    }
 }

@@ -1,6 +1,5 @@
 package servletnaya;
 
-import dao.UserDao;
 import dao.UserDaoHibernate;
 import entity.Hobby;
 import entity.Pet;
@@ -12,11 +11,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
-import java.sql.SQLException;
-import java.time.Period;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
 
 @WebServlet("/user")
 public class UserServlet extends HttpServlet {
@@ -30,14 +24,18 @@ public class UserServlet extends HttpServlet {
         String id = req.getParameter("user_id");
         User user = userDaoHibernate.findById(id).orElseThrow();
         if (button.equals("add_pet")) {
-            String petName = req.getParameter("pet_name");
-            user.getPet().add(new Pet(petName));
+            String petName = req.getParameter("pet");
+            Pet pet = new Pet();
+            pet.setName(petName);
+            user.getPet().add(pet);
             userDaoHibernate.update(user);
             doGet(req, resp);
         }
         if (button.equals("add_hobby")) {
             String hobbyName = req.getParameter("hobby");
-            user.getHobby().add(new Hobby(hobbyName));
+            Hobby hobby = new Hobby();
+            hobby.setName(hobbyName);
+            user.getHobby().add(hobby);
             userDaoHibernate.update(user);
             doGet(req, resp);
         }

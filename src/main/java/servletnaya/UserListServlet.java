@@ -32,7 +32,7 @@ public class UserListServlet extends HttpServlet {
 //        } catch (SQLException e) {
 //            throw new RuntimeException(e);
 //        }
-        userDaoHibernate.save(new User(name, surname, new HashSet<>(), new ArrayList<>()));
+        userDaoHibernate.save(new User(name, surname, new ArrayList<>(), new ArrayList<>()));
         doGet(req, resp);
     }
 

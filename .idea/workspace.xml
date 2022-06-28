@@ -4,17 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d80a2718-52d2-48dc-956e-dceedda9fb76" name="Changes" comment="Some Improvements">
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/Hobby.java" afterDir="false" />
+    <list default="true" id="d80a2718-52d2-48dc-956e-dceedda9fb76" name="Changes" comment="New Entities">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Pet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Pet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/servletnaya/UserListServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servletnaya/UserListServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/servletnaya/UserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servletnaya/UserServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/user.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/users-list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/users-list.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -322,7 +317,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656344107337</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="New Entities">
+      <created>1656414662558</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1656414662559</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -363,25 +365,21 @@
     <MESSAGE value="Dao and Entity" />
     <MESSAGE value="postgres Driver added" />
     <MESSAGE value="Some Improvements" />
-    <option name="LAST_COMMIT_MESSAGE" value="Some Improvements" />
+    <MESSAGE value="New Entities" />
+    <option name="LAST_COMMIT_MESSAGE" value="New Entities" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/hibernate/HibernateUtil.java</url>
-          <line>12</line>
-          <option name="timeStamp" value="3" />
+          <url>file://$PROJECT_DIR$/src/main/java/servletnaya/UserServlet.java</url>
+          <line>72</line>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/hibernate/HibernateUtil.java</url>
           <line>19</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/servletnaya/UserServlet.java</url>
-          <line>74</line>
-          <option name="timeStamp" value="5" />
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
