@@ -18,7 +18,6 @@
                 <th>id</th>
                 <th>name</th>
                 <th>surname</th>
-                <th>age</th>
             </tr>
         </thead>
         <% for (User user : users) {%>
@@ -26,7 +25,6 @@
                <td><%= user.getId() %></td>
                <td><%= user.getName() %></td>
                <td><%= user.getSurname() %></td>
-               <td><%= user.getAge() %></td>
                <td><a href="/jspishnaya/user?user_id=<%= user.getId() %>"> settings</a></td>
             </tr>
         <% } %>
@@ -38,7 +36,6 @@
         <legend>new user</legend>
         <label>name<input name="name" type="text" required></label>
         <label>surname<input name="surname" type="text" required></label>
-        <label>age<input name="age" type="text" required></label>
         <input type="submit" name="save" value="save">
     </fieldset>
     </form>

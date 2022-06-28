@@ -2,6 +2,8 @@ package servletnaya;
 
 import dao.UserDao;
 import dao.UserDaoHibernate;
+import entity.Hobby;
+import entity.Pet;
 import entity.User;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -11,6 +13,10 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.time.Period;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 @WebServlet("/user")
 public class UserServlet extends HttpServlet {
@@ -21,6 +27,21 @@ public class UserServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String button =req.getParameter("button");
+        String id = req.getParameter("user_id");
+        User user = userDaoHibernate.findById(id).orElseThrow();
+        if (button.equals("add_pet")) {
+            String petName = req.getParameter("pet_name");
+            user.getPet().add(new Pet(petName));
+            userDaoHibernate.update(user);
+            doGet(req, resp);
+        }
+        if (button.equals("add_hobby")) {
+            String hobbyName = req.getParameter("hobby");
+            user.getHobby().add(new Hobby(hobbyName));
+            userDaoHibernate.update(user);
+            doGet(req, resp);
+        }
+
         if (button.equals("delete")) {
 //            try {
 //                int id = Integer.parseInt(req.getParameter("user_id"));
@@ -29,11 +50,9 @@ public class UserServlet extends HttpServlet {
 //            } catch (SQLException e) {
 //                throw new RuntimeException(e);
 //            }
-            int id = Integer.parseInt(req.getParameter("user_id"));
-            User user = new User(id);
             userDaoHibernate.delete(user);
-            resp.sendRedirect("/jspishnaya/users-list");
-        } else {
+        }
+        if ((button.equals("update"))) {
 //            try {
 //                int id = Integer.parseInt(req.getParameter("user_id"));
 //                String name = req.getParameter("name");
@@ -44,14 +63,11 @@ public class UserServlet extends HttpServlet {
 //            } catch (SQLException e) {
 //                throw new RuntimeException(e);
 //            }
-            int id = Integer.parseInt(req.getParameter("user_id"));
-            String name = req.getParameter("name");
-            String surname = req.getParameter("surname");
-            int age = Integer.parseInt(req.getParameter("age"));
-            User user = new User(id, name, surname, age);
+            user.setName(req.getParameter("name"));
+            user.setSurname(req.getParameter("surname"));
             userDaoHibernate.update(user);
-            resp.sendRedirect("/jspishnaya/users-list");
         }
+        resp.sendRedirect("/jspishnaya/users-list");
     }
 
     @Override

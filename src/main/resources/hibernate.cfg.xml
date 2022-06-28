@@ -14,7 +14,8 @@
         <property name="show_sql">true</property>
         <property name="hibernate.format_sql">true</property>
         <property name="hibernate.current_session_context_class">thread</property>
-        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.hbm2ddl.auto">create</property>
+<!--        <property name="hibernate.hbm2ddl.auto">update</property>-->
 
         <!-- Assume test is the database name -->
         <property name="hibernate.connection.url">
@@ -29,6 +30,7 @@
 
         <mapping class="entity.User"/>
         <mapping class="entity.Pet"/>
+        <mapping class="entity.Hobby"/>
 <!--        <mapping resource="User.hbm.xml"/>-->
 
     </session-factory>

@@ -1,28 +1,31 @@
 package entity;
 
-
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
-@Table(name = "pet")
+@Table(name = "hobby")
 @NoArgsConstructor
-@Getter @Setter
-public class Pet {
+@Getter
+@Setter
+public class Hobby {
 
     @Id
-    @Column(name = "pet_id")
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name = "hobby_id")
     private int id;
     @Column(name = "name")
     private String name;
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "user_id")
-    private User user;
+    @ManyToMany(
+            mappedBy = "hobby",
+            fetch = FetchType.EAGER)
+    private List<User> users;
 
-    public Pet(String petName) {
-        this.name = petName;
+    public Hobby(String name) {
+        this.name = name;
     }
 }

@@ -1,5 +1,7 @@
 package dao;
 
+import entity.Hobby;
+import entity.Pet;
 import entity.User;
 import jdbc.ConnectionManager;
 
@@ -13,13 +15,14 @@ public class UserDao implements UserDaoIF{
     @Override
     public Optional<User> findById(String id) throws SQLException {
         String sql = """
-                select * from users_table where user_id = ?;
+                select * from app_user where user_id = ?;
                 """;
 
         int user_id = 0;
         String name = "";
         String surname = "";
-        int age = 0;
+        List<Pet> pets = new ArrayList<>();
+        List<Hobby> groups = new ArrayList<>();
 
         try (Connection connection = ConnectionManager.connect();
              PreparedStatement statement = connection.prepareStatement(sql)) {
@@ -29,16 +32,16 @@ public class UserDao implements UserDaoIF{
                 user_id = resultSet.getInt("user_id");
                 name = resultSet.getString("name");
                 surname = resultSet.getString("surname");
-                age = resultSet.getInt("age");
+
             }
         }
-        return Optional.of(new User(user_id, name, surname, age));
+        return Optional.of(new User(user_id, name, surname));
     }
 
     @Override
     public List<User> findAll() throws SQLException {
         String sql = """
-                select * from users_table;
+                select * from app_user;
                 """;
         List<User> userList = new ArrayList<>();
         try (Connection connection = ConnectionManager.connect();
@@ -48,9 +51,9 @@ public class UserDao implements UserDaoIF{
                 int user_id = resultSet.getInt("user_id");
                 String name = resultSet.getString("name");
                 String surname = resultSet.getString("surname");
-                int age = resultSet.getInt("age");
 
-                User user = new User(user_id, name, surname, age);
+
+                User user = new User(user_id, name, surname);
                 userList.add(user);
             }
         }
@@ -60,7 +63,7 @@ public class UserDao implements UserDaoIF{
     @Override
     public boolean save(User user) throws SQLException {
         String sql = """
-                insert into users_table (name, surname, age) values (?,?,?) ;
+                insert into app_user (name, surname, age) values (?,?) ;
                 """;
         boolean saved;
 
@@ -68,7 +71,6 @@ public class UserDao implements UserDaoIF{
              PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, user.getName());
             statement.setString(2, user.getSurname());
-            statement.setInt(3, user.getAge());
             saved = statement.executeUpdate() > 0;
         }
         return saved;
@@ -77,7 +79,7 @@ public class UserDao implements UserDaoIF{
     @Override
     public boolean update(User user) throws SQLException {
         String sql = """
-                update users_table set name = ?, surname = ?, age = ? where user_id = ?;
+                update users_table set name = ?, surname = ? where user_id = ?;
                 """;
         boolean updated;
 
@@ -85,7 +87,6 @@ public class UserDao implements UserDaoIF{
              PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, user.getName());
             statement.setString(2, user.getSurname());
-            statement.setInt(3, user.getAge());
             statement.setInt(4, user.getId());
             updated = statement.executeUpdate() > 0;
         }
@@ -95,7 +96,7 @@ public class UserDao implements UserDaoIF{
     @Override
     public boolean delete(User user) throws SQLException {
         String sql = """
-                delete from users_table where user_id = ?;
+                delete from app_user where user_id = ?;
                 """;
         boolean deleted;
 
